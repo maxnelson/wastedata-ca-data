@@ -8,6 +8,7 @@ on:
       - 'data/processed/by_jurisdiction.json'
       - 'data/processed/population.json'
       - 'data/processed/disposal/**'
+  workflow_dispatch:
 
 jobs:
   release:

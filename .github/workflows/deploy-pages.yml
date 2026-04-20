@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'data/processed/characterization/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
