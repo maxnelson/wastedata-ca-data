@@ -108,14 +108,10 @@ def main():
             'hasCharacterization': False,
         }
 
-        # Characterization — match by slug
+        # Characterization — only flag presence; full data served at runtime via GitHub Pages
         char_file = char_dir / f"{slugify(jurs_name)}.json" if char_dir.exists() else None
         if char_file and char_file.exists():
-            char = json.loads(char_file.read_text())
             entry['hasCharacterization'] = True
-            entry['commercial']  = char.get('commercial', {}).get('categories', {})
-            if 'residential' in char:
-                entry['residential'] = char['residential'].get('categories', {})
             char_matched += 1
 
         result[jurs_name] = entry
