@@ -18,15 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Debug — list processed files
-        run: ls -lh data/processed/ data/processed/disposal/ || true
-
       - name: Package core data
         run: |
           tar -czf core-data.tar.gz \
             data/processed/jurisdictions.json \
-            data/processed/by_jurisdiction.json \
             data/processed/population.json \
+            data/processed/disposal/by_jurisdiction.json \
             data/processed/disposal/jurisdiction_county_map.json
 
       - name: Create or update release
