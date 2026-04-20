@@ -1,0 +1,14 @@
+{
+  "name": "wastedata-ca-data",
+  "version": "1.0.0",
+  "description": "Data pipeline for TrashData — California waste management data",
+  "type": "commonjs",
+  "scripts": {
+    "fetch:waste-characterization": "node tools/data_extraction/fetch-calrecycle-waste-characterization.cjs",
+    "gen:city-colors": "python3 tools/data_transformation/build_city_color_map.py",
+    "transform:disposal": "python3 tools/data_transformation/transform_disposal.py",
+    "transform:population": "python3 tools/data_transformation/transform_population.py",
+    "transform:characterization": "python3 tools/data_transformation/transform_characterization.py",
+    "transform:all": "npm run transform:disposal && npm run transform:population && npm run transform:characterization && python3 tools/data_transformation/build_processed.py"
+  }
+}

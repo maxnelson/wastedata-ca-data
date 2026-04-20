@@ -1,0 +1,76 @@
+{
+  "commercial": {
+    "total": 5778.6,
+    "categories": {
+      "Organic": {
+        "tons": 2320.0,
+        "pct": 40.15
+      },
+      "Paper & Cardboard": {
+        "tons": 1493.5,
+        "pct": 25.85
+      },
+      "Plastic": {
+        "tons": 727.1,
+        "pct": 12.58
+      },
+      "Construction & Inerts": {
+        "tons": 646.3,
+        "pct": 11.18
+      },
+      "Metal": {
+        "tons": 215.7,
+        "pct": 3.73
+      },
+      "Mixed Residue": {
+        "tons": 69.1,
+        "pct": 1.2
+      },
+      "Special Waste": {
+        "tons": 169.9,
+        "pct": 2.94
+      },
+      "Glass": {
+        "tons": 137.1,
+        "pct": 2.37
+      }
+    }
+  },
+  "residential": {
+    "total": 7808.0,
+    "categories": {
+      "Organic": {
+        "tons": 3506.0,
+        "pct": 44.9
+      },
+      "Paper & Cardboard": {
+        "tons": 1393.0,
+        "pct": 17.84
+      },
+      "Plastic": {
+        "tons": 724.0,
+        "pct": 9.27
+      },
+      "Construction & Inerts": {
+        "tons": 1085.0,
+        "pct": 13.9
+      },
+      "Metal": {
+        "tons": 221.0,
+        "pct": 2.83
+      },
+      "Mixed Residue": {
+        "tons": 325.0,
+        "pct": 4.16
+      },
+      "Special Waste": {
+        "tons": 397.0,
+        "pct": 5.08
+      },
+      "Glass": {
+        "tons": 157.0,
+        "pct": 2.01
+      }
+    }
+  }
+}

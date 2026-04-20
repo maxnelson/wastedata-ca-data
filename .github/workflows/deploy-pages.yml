@@ -1,0 +1,22 @@
+name: Deploy characterization data to Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/processed/characterization/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy characterization JSONs to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: data/processed/characterization
+          branch: gh-pages
+          clean: true
