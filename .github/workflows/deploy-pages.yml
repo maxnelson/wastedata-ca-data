@@ -1,10 +1,13 @@
-name: Deploy characterization data to Pages
+name: Deploy data to Pages
 
 on:
   push:
     branches: [main]
     paths:
       - 'data/processed/characterization/**'
+      - 'data/processed/jurisdictions.json'
+      - 'data/processed/population.json'
+      - 'data/processed/disposal/**'
   workflow_dispatch:
 
 jobs:
@@ -15,9 +18,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy characterization JSONs to gh-pages
+      - name: Stage GitHub Pages content
+        run: |
+          mkdir -p _site/core/disposal
+          cp data/processed/characterization/*.json _site/
+          cp data/processed/jurisdictions.json _site/core/
+          cp data/processed/population.json _site/core/
+          cp data/processed/disposal/by_jurisdiction.json _site/core/disposal/
+          cp data/processed/disposal/jurisdiction_county_map.json _site/core/disposal/
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: data/processed/characterization
+          folder: _site
           branch: gh-pages
           clean: true
